@@ -1,0 +1,70 @@
+mysql> create database data;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| b                  |
+| course             |
+| data               |
+| department         |
+| facullty           |
+| faculty            |
+| gowthami           |
+| hemu               |
+| mysql              |
+| performance_schema |
+| shailu             |
+| student            |
+| test               |
++--------------------+
+14 rows in set (0.01 sec)
+
+mysql> use data;
+Database changed
+mysql> create table books(bno int(10),bname  varchar(30),publisher_name varchar(40),publisher_country varchar(50));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into books values(1,"one summer","aanad","canada");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into books values(2,"the knight","jackson","india");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into books values(3,"harry potter","jk","usa");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into books values(4,"perscy jackson","smith","uk");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from books;
++------+----------------+----------------+-------------------+
+| bno  | bname          | publisher_name | publisher_country |
++------+----------------+----------------+-------------------+
+|    1 | one summer     | aanad          | canada            |
+|    2 | the knight     | jackson        | india             |
+|    3 | harry potter   | jk             | usa               |
+|    4 | perscy jackson | smith          | uk                |
++------+----------------+----------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> update books
+    -> set publisher_name='williams'where bno=1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from books;
++------+----------------+----------------+-------------------+
+| bno  | bname          | publisher_name | publisher_country |
++------+----------------+----------------+-------------------+
+|    1 | one summer     | williams       | canada            |
+|    2 | the knight     | jackson        | india             |
+|    3 | harry potter   | jk             | usa               |
+|    4 | perscy jackson | smith          | uk                |
++------+----------------+----------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql>
+
